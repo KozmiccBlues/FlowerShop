@@ -1,20 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Flower Shop</title>
+
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
+<body style="background: bisque">
+<div id=”header”>
+    <h1 style="background: darkslategray">Filo Flower Shop
+        <p>
+            <button type="button" class="btn btn-success">Kwiaty</button>
+            <button type="button" class="btn btn-success">Promocje</button>
+            <a href="/category" class="btn btn-success">Kategorie</a>
+            <button type="button" class="btn btn-success">Akcesoria</button>
+            <button type="button" class="btn btn-success">Blog</button>
+            <button type="button" class="btn btn-success">Zaloguj się</button>
+            <button type="button" class="btn btn-success">Moje konto</button>
+            <button type="button" class="btn btn-success">Lista życzeń</button>
+            <button type="button" class="btn btn-success">Kontakt</button></p>
+        <img src="https://cdn0.iconfinder.com/data/icons/house-plant-3/64/PHILODENDRON_MELANOCHRYSUM-flower-plant-farming_and_gardening-garden-512.png" style="size: 100px" width="200">
+        <img src="https://cdn0.iconfinder.com/data/icons/house-plant-3/64/PHILODENDRON_PINK_PRINCESS-pink_princess-philodendron-plant-garden-512.png" style="size: 100px" width="200">
+        <img src="https://cdn0.iconfinder.com/data/icons/house-plant-3/64/PEACE_LILY-flower-plant-farming_and_gardening-gardening-512.png" style="size: 100px" width="200">
+        <img src="https://cdn0.iconfinder.com/data/icons/house-plant-3/64/SPIDER_PLANT-farming_and_gardening-gardening-garden-plants-512.png" style="size: 100px" width="200">
+        <img src="https://cdn0.iconfinder.com/data/icons/house-plant-3/64/GOLDEN_POTHOS-plant-nature-botanic-gardening-512.png" style="size: 100px" width="200">
+        <img src="https://cdn0.iconfinder.com/data/icons/house-plant-3/64/XANADU-leaf-philodendron-plant-garden-512.png" style="size: 100px" width="200">
+        <img src="https://cdn1.iconfinder.com/data/icons/therapy-8/64/GARDENING-garden-farming-shovel-sprout-512.png" style="size: 100px" width="200">
+        <img src="https://cdn0.iconfinder.com/data/icons/garden-48/64/SHOVEL-farming-gardening-construction_and_tools-dig-512.png" style="size: 100px" width="200">
+        <img src="https://cdn0.iconfinder.com/data/icons/garden-48/64/SPRAY_BOTTLE--farming-gardening-tools-512.png" style="size: 100px" width="200">
+
+    </h1>
 <body>
 
-<h1 th:text="${category.name}"></h1>
+<table class="table table-striped" id="dataTable" data-page-length='50' data-order='[[1, "desc"]]' style="color: darkslateblue">
+    <thead>
+    <tr style="color: darkslateblue">
 
-<ul>
-  <li th:each="flower: ${category.flowers}">
+        <th scope="col">Nazwa</th>
+        <th scope="col">Opis</th>
+        <th scope="col">Cena</th>
 
-    <a th:href="'/flower/' + ${flower.id}" th:text=" ${flower.name}"></a>
+    </tr>
+    </thead>
 
-  </li>
-</ul>
+    <tbody>
+    <tr th:each="f: ${category.flowers}">
+        <td th:text="${f.name}"></td>
+        <td th:text="${f.description}"></td>
+        <td th:text="${f.price}"></td>
+
+    </tr>
+
+    </tbody>
+</table>
+
+<p>
+    <a class="btn btn-success" th:href="|/flower/add?categoryId=${category.id}|">Dodaj kwiat</a>
+</p>
+
+<p>
+    <a class="btn btn-success" href="/category" role="button">Powrót</a>
+</p>
+
+
+
 
 </body>
 </html>

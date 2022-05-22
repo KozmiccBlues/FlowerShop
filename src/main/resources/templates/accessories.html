@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Flower Shop</title>
@@ -17,12 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body style="background: bisque">
-
-
 <div id=”header”>
     <h1 style="background: darkslategray">Filo Flower Shop
         <p>
-            <a href="/flower/add" class="btn btn-success">Kwiaty</a>
+            <button type="button" class="btn btn-success">Kwiaty</button>
             <button type="button" class="btn btn-success">Promocje</button>
             <a href="/category" class="btn btn-success">Kategorie</a>
             <button type="button" class="btn btn-success">Akcesoria</button>
@@ -42,49 +32,51 @@
         <img src="https://cdn0.iconfinder.com/data/icons/garden-48/64/SPRAY_BOTTLE--farming-gardening-tools-512.png" style="size: 100px" width="200">
 
     </h1>
+<body>
+
+<div class="container">
+    <img src="https://zielony-parapet.pl/10870-large_default/podloze-uniwersalne-bigos-ziemia-do-kwiatow-doniczkowych.jpg" alt="ziemia" style="width:50%;">
+    <div class="text-block">
+        <h4>Ziemia uniwersalna</h4>
+        <p>3.99 pln /1 l</p>
+    </div>
 </div>
 
+<div class="container">
+    <img src="https://img.shmbk.pl/rimgspr/14219014_pad_720_540_dla-domu-ogrod-i-taras-konewki-zack-konweka-florea.jpg" alt="konewka" style="width:50%;">
+    <div class="text-block">
+        <h4>Konewka 2l</h4>
+        <p>17.99 pln</p>
+    </div>
+</div>
 
-<div style="width: 100%; max-width: 500px; margin: 200px auto">
-    <h1 style="color: darkslategray" </h1>
+<div class="container">
+    <img src="https://cf-bee.statiki.pl/images/large/640/5902341004868.jpg" alt="nawoz" style="width:50%;">
+    <div class="text-block">
+        <h4>Nawóz Biohumus</h4>
+        <p>9.99 pln</p>
+    </div>
+</div>
 
-
-    <form method="post" action="/flower/add" th:object="${flower}">
-
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Nazwa</label>
-            <input type="text" th:field="*{name}" class="form-control" id="formGroupExampleInput" placeholder="Nazwa">
-        </div>
-
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Opis</label>
-            <input type="text" th:field="*{description}" class="form-control" id="formGroupExampleInput" placeholder="Opis">
-        </div>
-
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Kategoria</label>
-            <select th:field="*{category}">
-                <option th:each="category: ${categories}" th:text="${category.name}" th:value="${category.id}"></option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Cena</label>
-            <input type="number" th:field="*{price}" class="form-control" id="formGroupExampleInput" placeholder="Cena">
-        </div>
-
-        <p><input class="btn btn-primary" type="submit" value="Dodaj" /></p>
-
-    </form>
-
-<p>
-    <a class="btn btn-primary" href="/" role="button">Powrót</a>
-
+<div class="container">
+    <img src="https://sklepgalicja.pl/images/%C5%81opatka%2035,5cm%20ar%200077.jpg" alt="łopatka" style="width:50%;">
+    <div class="text-block">
+        <h4>Lopatka</h4>
+        <p>5.99 pln</p>
+    </div>
+</div>
+<p style="margin: auto;width: 100px">
+    <a class="btn btn-success" href="/" role="button">Powrót</a>
 </p>
+<p>
+<div id=”footer” style="background: darkslategray">
 
+    <p>Filo Flower Shop</p>
+    <p>Starowiejska 12</p>
+    <p>81-320 Gdynia</p>
+
+    </p>
 </div>
-
-
 
 
 

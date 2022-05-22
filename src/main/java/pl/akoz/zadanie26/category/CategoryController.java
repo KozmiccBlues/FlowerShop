@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import pl.akoz.zadanie26.flower.Flower;
 import pl.akoz.zadanie26.flower.FlowerRepository;
 import pl.akoz.zadanie26.flower.FlowerRepository;
 
@@ -27,14 +30,14 @@ public class CategoryController {
         if (categoryOptional.isPresent()) {
             Category category = categoryOptional.get();
             model.addAttribute("category", category);
-            return "category";
+            return "flower";
         } else {
             return "Błąd";
 
         }
-
     }
 }
+
 
 
 

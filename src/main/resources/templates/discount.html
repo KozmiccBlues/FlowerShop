@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Flower Shop</title>
@@ -17,12 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body style="background: bisque">
-
-
 <div id=”header”>
     <h1 style="background: darkslategray">Filo Flower Shop
         <p>
-            <a href="/flower/add" class="btn btn-success">Kwiaty</a>
+            <button type="button" class="btn btn-success">Kwiaty</button>
             <button type="button" class="btn btn-success">Promocje</button>
             <a href="/category" class="btn btn-success">Kategorie</a>
             <button type="button" class="btn btn-success">Akcesoria</button>
@@ -42,49 +32,52 @@
         <img src="https://cdn0.iconfinder.com/data/icons/garden-48/64/SPRAY_BOTTLE--farming-gardening-tools-512.png" style="size: 100px" width="200">
 
     </h1>
+<body>
+
+<div class="container">
+    <img src="https://www.sinsay.com/media/catalog/product/1/8/1888J-01X-001-1_5.jpg" alt="doniczka" style="width:50%;">
+    <div class="text-block">
+        <h4>Osłonka betonowa 14 cm</h4>
+        <p style="color: crimson">19.99 pln</p>
+    </div>
 </div>
 
+<div class="container">
+    <img src="https://dekoracjadomu.b-cdn.net/358541/doniczka-ceramiczna-zielona-9x11-cm.jpg" alt="doniczka" style="width:50%;">
+    <div class="text-block">
+        <h4>Osłonka ceramiczna 14 cm</h4>
+        <p style="color: crimson">15.99 pln</p>
+    </div>
+</div>
 
-<div style="width: 100%; max-width: 500px; margin: 200px auto">
-    <h1 style="color: darkslategray" </h1>
+<div class="container">
+    <img src="https://cf.shopee.pl/file/22e56646c09303b8a9e0c33e7c886e5e" alt="kwiat" style="width:50%;">
+    <div class="text-block">
+        <h4>Paprotka zwyczajna</h4>
+        <p style="color: crimson">7.99 pln</p>
+    </div>
+</div>
 
+<div class="container">
+    <img src="https://www.swiatkwiatow.pl/userfiles//image/fiolek_alpejski5.jpg" alt="kwiat" style="width:50%;">
+    <div class="text-block">
+        <h4>Fiołek alpejski</h4>
+        <p style="color: crimson">5.99 pln</p>
+    </div>
+</div>
 
-    <form method="post" action="/flower/add" th:object="${flower}">
-
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Nazwa</label>
-            <input type="text" th:field="*{name}" class="form-control" id="formGroupExampleInput" placeholder="Nazwa">
-        </div>
-
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Opis</label>
-            <input type="text" th:field="*{description}" class="form-control" id="formGroupExampleInput" placeholder="Opis">
-        </div>
-
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Kategoria</label>
-            <select th:field="*{category}">
-                <option th:each="category: ${categories}" th:text="${category.name}" th:value="${category.id}"></option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Cena</label>
-            <input type="number" th:field="*{price}" class="form-control" id="formGroupExampleInput" placeholder="Cena">
-        </div>
-
-        <p><input class="btn btn-primary" type="submit" value="Dodaj" /></p>
-
-    </form>
-
-<p>
-    <a class="btn btn-primary" href="/" role="button">Powrót</a>
-
+<p style="margin: auto;width: 100px">
+    <a class="btn btn-success" href="/" role="button">Powrót</a>
 </p>
+<p>
+<div id=”footer” style="background: darkslategray">
 
+    <p>Filo Flower Shop</p>
+    <p>Starowiejska 12</p>
+    <p>81-320 Gdynia</p>
+
+    </p>
 </div>
-
-
 
 
 

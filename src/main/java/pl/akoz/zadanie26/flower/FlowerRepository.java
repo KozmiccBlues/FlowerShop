@@ -9,5 +9,5 @@ public interface FlowerRepository extends JpaRepository<Flower, Long> {
 
     List<Flower> findByCategory(Category category);
 
-
+    List<Flower> findAllByOrderByNameAsc();
 }
